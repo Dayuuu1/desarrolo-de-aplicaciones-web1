@@ -1,0 +1,77 @@
+body {
+    background: #F4F6F6;
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #212F3D;
+    text-align: center;
+}
+
+#content {
+    width: 80%;
+    border: dotted 2px #5DADE2;
+    margin: 10px auto;
+    border-radius: 5px;
+    background: #AEB6BF;
+    font-family: helvetica;
+}
+
+fieldset {
+    color: #0E6655;
+    width: 65%;
+    margin: 10px auto;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+}
+
+select {
+    width: 150px;
+}
+
+form input[type="text"],
+form select,
+textarea {
+    width: 180px;
+    padding: 3px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+.btn {
+    background: #273746;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: solid 2px white;
+    border-radius: 5px;
+    transition: transform .2s;
+    /* Animation */
+    margin: 1px 20px;
+}
+
+#pie {
+    text-align: center;
+}
+
+.btn:hover {
+    background: #212F3C;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border: solid 3px white;
+    border-radius: 5px;
+    transform: scale(1.5);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

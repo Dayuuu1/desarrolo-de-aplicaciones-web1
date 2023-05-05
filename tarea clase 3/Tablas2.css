@@ -1,0 +1,46 @@
+/*
+    Creando Tablas de nivel I CSS
+*/
+
+body {
+    display: flex;
+    text-transform: capitalize;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    color: brown;
+}
+
+td {
+    text-align: center;
+}
+
+table {
+    margin-top: 50px;
+    caption-side: bottom;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 5px rgb(128, 128, 128);
+}
+
+tbody td:hover {
+    background: rgba(67, 210, 253, 0.4);
+}
+
+caption {
+    padding-top: 20px;
+    font-style: italic;
+    color: brown;
+}
+
+td,
+th {
+    border: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

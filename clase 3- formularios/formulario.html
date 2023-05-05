@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <meta name="viewport" content="width=device*width, initial*scale=1.0">
+
+
+    <style>
+        body {
+            background: #F4F6F6;
+            color: white;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #212F3D;
+            text-align: center;
+        }
+        
+        #content {
+            width: 80%;
+            border: dotted 2px #5DADE2;
+            margin: 10px auto;
+            border-radius: 5px;
+            background: #AEB6BF;
+            font-family: helvetica;
+        }
+        
+        fieldset {
+            color: #0E6655;
+            width: 65%;
+            margin: 10px auto;
+        }
+        
+        label {
+            display: inline-block;
+            width: 90px;
+        }
+        
+        select {
+            width: 150px;
+        }
+        
+        form input[type="text"],
+        form select,
+        textarea {
+            width: 180px;
+            padding: 3px 10px;
+            border: 1px solid #f6f6f6;
+            border-radius: 3px;
+            background-color: #f6f6f6;
+            margin: 8px 0;
+            display: inline-block;
+        }
+        
+        .btn {
+            background: #273746;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border: solid 2px white;
+            border-radius: 5px;
+            transition: transform .2s;
+            /* Animation */
+            margin: 1px 20px;
+        }
+        
+        #pie {
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #212F3C;
+            color: white;
+            width: 120px;
+            height: 40px;
+            border: solid 3px white;
+            border-radius: 5px;
+            transform: scale(1.5);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <h3>REGISTRO DE ESTUDIANTES</h3>
+        <form action="#">
+            <fieldset>
+                <legend>Datos personales del estudiante</legend>
+
+                <label for="DNI">DNI</label>
+                <input type="text" name="DNI" id="DNI" placeholder="DNI" maxlength="8">
+
+                <label for="NOMBRE">NOMBRE</label>
+                <input type="text" name="N0MBRE" id="NOMBRE" placeholder="NOMBRE"><br>
+
+                <label for="APELLIDOS">APELLIDOS</label>
+                <input type="text" name="APELLIDOS" id="APELLIDOS" placeholder="APELLIDOS">
+
+                <label for="e-civil">E-CIVIL</label>
+                <input type="radio" id="e-civil" name="e-civil" value="0" checked>Soltero
+                <input type="radio" id="e-civil" name="e-civil" value="1" checked>Casado
+                <input type="radio" id="e-civil" name="e-civil" value="2" checked>Divorciado
+
+                <label for="direccion">DIRECCION: </label>
+                <input name="direccion" id="direccion" cols="30" rows="2">
+                </input>
+            </fieldset>
+            <fieldset>
+                <legend>Datos academicos</legend>
+                <label for="escuela">ESCUELA</label>
+                <select name="escuela" id="escuela">
+                    <option value="0" disabled selected>SELECCIONE UNA ESCUELA</option>
+                    <option value="ISI">Ingenieria de Sistemas e Informatica</option>
+                    <option value="IFM">INGENIERIA FORESTAL</option>
+                    <option value="IA">INGENIERIA AGROINDUSTRIAL</option>
+                    <option value="MV">MEDICINA VETERINARIA Y ZOOTECNIA</option>
+                </select><br>
+                <label for="semestre">CICLO</label><br>
+                <label for="semestre">
+                    <input type="checkbox" id="semestre" value="I">I Ciclo
+                </label><br>
+                <label for="semestre">
+                    <input type="checkbox" id="semestre" value="I">II Ciclo
+                </label><br>
+                <label for="semestre">
+                    <input type="checkbox" id="semestre" value="I">III Ciclo
+                </label><br>
+                <label for="semestre">
+                    <input type="checkbox" id="semestre" value="I">IV Ciclo
+                </label><br>
+                <label for="semestre">
+                    <input type="checkbox" id="semestre" value="I">V Ciclo
+                </label><br>
+
+            </fieldset>
+            <br>
+            <div id="pie">
+                <input type="submit" value="Enviar" name="enviar" class="btn">
+                <input type="reset" value="borrar" name="borrar" class="btn">
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

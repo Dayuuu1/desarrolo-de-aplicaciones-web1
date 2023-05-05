@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <div class="login_form_container">
+        <div class="login_form">
+            <h2>Datos del usuario</h2>
+            <div class="input-field">
+                <label>Codigo:</label>
+                <input type="password" id="codigo" class="input_text" placeholder="Ingrese su codigo" required>
+            </div>
+
+            <div class="input-field">
+                <label>Nombre:</label>
+                <input type="text" id="nombre" class="input_text" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="input-field">
+                <label>Apellido:</label>
+                <input type="text" id="Apellido" class="input_text" placeholder="Ingrese su apellido" required>
+            </div>
+            <div class="input-field">
+                <label>Pais:</label>
+                <div class="wrapper">
+                    <div class="select-btn">
+                        <span>Seleccione su pasis</span>
+                        <i class="uil uil-angle-down"></i>
+                    </div>
+                    <div class="content">
+                        <div class="search">
+
+                            <input class="input_text" spellcheck="false" type="text" placeholder="Search">
+                        </div>
+                        <ul class="options"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="input-fieldw">
+                <label>Genero:</label>
+                <div class="radio-tile-group">
+
+                    <div class="input-container">
+
+                        <input id="m" type="radio" name="radio2">
+                        <div class="radio-tile">
+                            <ion-icon name="man"></ion-icon>
+                            <label for="walk">H</label>
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="w" type="radio" name="radio2">
+                        <div class="radio-tile">
+                            <ion-icon name="woman"></ion-icon>
+                            <label for="bike">M</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="input-fieldw">
+                <label>Curso:</label>
+                <div class="radio-tile-group">
+
+                    <div class="input-container">
+
+                        <input id="m" type="radio" name="radio">
+                        <div class="radio-tile">
+                            <ion-icon name="refresh-outline"></ion-icon>
+                            <label for="walk">C</label>
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="w" type="radio" name="radio">
+                        <div class="radio-tile">
+                            <ion-icon name="logo-nodejs"></ion-icon>
+                            <label for="bike">java</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input id="w" type="radio" name="radio">
+                        <div class="radio-tile">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                            <label for="bike">PHP</label>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="input-fieldw">
+                <label>Comentario:</label>
+                <textarea class="input_text" name="co" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="bp">
+                <div class="button_group" id="login_button">
+                    <a>Enviar</a>
+                </div>
+                <div class="button_group" id="login_button">
+                    <a>Borrar</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>

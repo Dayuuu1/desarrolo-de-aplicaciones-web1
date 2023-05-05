@@ -1,0 +1,49 @@
+body {
+    text-transform: capitalize;
+    background: rgb(31, 235, 31);
+}
+
+h1 {
+    color: white;
+    position: relative;
+    float: left;
+}
+
+.blanco {
+    background: wheat;
+}
+
+td {
+    text-align: center;
+}
+
+.naranja {
+    background: orangered;
+}
+
+table {
+    margin-top: 50px;
+    caption-side: bottom;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+tbody td:hover {
+    background: rgba(67, 210, 253, 0.4);
+}
+
+caption {
+    padding-top: 20px;
+    font-style: italic;
+    color: brown;
+}
+
+td,
+th {
+    border: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
