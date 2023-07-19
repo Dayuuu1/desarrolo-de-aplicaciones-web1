@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Similitud de coseno</title>
+</head>
+
+<body>
+    <h1>Similitud de coseno</h1>
+    <p id="respuesta"></p>
+
+    <script>
+        // Función para calcular el producto punto de dos vectores
+        function dotProduct(vec1, vec2) {
+            let result = 0;
+            for (let i = 0; i < vec1.length; i++) {
+                result += vec1[i] * vec2[i];
+            }
+            return result;
+        }
+
+        // Función para calcular la magnitud de un vector
+        function magnitude(vec) {
+            let result = 0;
+            for (let i = 0; i < vec.length; i++) {
+                result += Math.pow(vec[i], 2);
+            }
+            return Math.sqrt(result);
+        }
+
+        // Función para calcular la similitud de coseno entre dos vectores
+        function cosineSimilarity(vec1, vec2) {
+            const dotProd = dotProduct(vec1, vec2);
+            const mag1 = magnitude(vec1);
+            const mag2 = magnitude(vec2);
+            const similarity = dotProd / (mag1 * mag2);
+            return similarity;
+        }
+
+        // Función principal
+        function main() {
+            // Conjunto de datos 1
+            const dataset1 = [1, 2, 3, 4, 5];
+
+            // Conjunto de datos 2
+            const dataset2 = [2, 4, 6, 8, 10];
+
+            // Calcula la similitud de coseno entre dataset1 y dataset2
+            const similarity = cosineSimilarity(dataset1, dataset2);
+
+            res = document.getElementById("respuesta").textContent = "la semilitud es: " + similarity;
+        }
+
+        // Ejecuta la función principal
+        main();
+    </script>
+</body>
+
+</html>

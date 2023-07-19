@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coeficiente de Correlación </title>
+
+</head>
+
+<body>
+    <div id="container">
+        <fieldset>
+            <legend>calcular</legend>
+            <button onclick="calcularR()">Calcular</button>
+        </fieldset>
+        <button onclick="calcularR()">Calcular</button>
+        <fieldset>
+            <legend>resultado</legend>
+            <div id="result"></div>
+        </fieldset>
+
+    </div>
+
+
+    <script>
+        // Definición de los arrays x e y con los datos de muestra
+        var x = [110, 139, 150, 133, 117, 135, 155, 153, 153, 135, 105, 138];
+        var y = [1870, 2201, 2550, 2261, 1234, 2295, 2636, 2601, 1920, 2740, 1785, 2346];
+
+        // Función para calcular el coeficiente de correlación de Pearson (r)
+        function calcularR() {
+            // Llamada a la función CCC para obtener el coeficiente de correlación de Pearson
+            var r = CCC(x, y);
+
+            // Obtener una referencia al elemento HTML con id "result"
+            var resultado = document.getElementById("result");
+
+            // Actualizar el contenido del elemento HTML para mostrar el resultado
+            resultado.innerHTML = " (r) es: " + r;
+        }
+
+        // Función para calcular el coeficiente de correlación de Pearson (r)
+        function CCC(arr1, arr2) {
+            // Obtener la longitud de los arrays
+            var n = arr1.length;
+
+            // Calcular el producto escalar de los arrays
+            var valorsp = SP(arr1, arr2);
+
+            // Calcular la suma de los elementos de los arrays
+            var sarray1 = suma(arr1);
+            var sarray2 = suma(arr2);
+
+            // Calcular la suma de los cuadrados de los elementos de los arrays
+            var valor1 = SC(arr1);
+            var valor2 = SC(arr2);
+
+            // Calcular el numerador y el denominador del coeficiente de correlación de Pearson
+            var numerador = n * valorsp - sarray1 * sarray2;
+            var denominador = Math.sqrt((n * valor1 - Math.pow(sarray1, 2)) * (n * valor2 - Math.pow(sarray2, 2)));
+
+            // Calcular el coeficiente de correlación de Pearson y devolverlo
+            return numerador / denominador;
+        }
+
+        // Función para calcular el producto escalar de dos arrays
+        function SP(arr1, arr2) {
+            // Inicializar la variable suma en 0
+            var suma = 0;
+
+            // Recorrer los elementos de los arrays y sumar los productos de los elementos correspondientes
+            for (var i = 0; i < arr1.length; i++) {
+                suma += arr1[i] * arr2[i];
+            }
+
+            // Devolver la suma, que es el producto escalar de los dos arrays
+            return suma;
+        }
+
+        // Función para calcular la suma de los elementos de un array
+        function suma(arr) {
+            // Inicializar la variable sum en 0
+            var sum = 0;
+
+            // Recorrer los elementos del array y sumarlos
+            for (var i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            // Devolver la suma
+            return sum;
+        }
+
+        // Función para calcular la suma de los cuadrados de los elementos de un array
+        function SC(arr) {
+            // Inicializar la variable suma en 0
+            var suma = 0;
+
+            // Recorrer los elementos del array, elevarlos al cuadrado y sumarlos
+            for (var i = 0; i < arr.length; i++) {
+                suma += Math.pow(arr[i], 2);
+            }
+            return suma;
+        }
+
+
+
+        function suma(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+    </script>
+</body>
+
+</html>

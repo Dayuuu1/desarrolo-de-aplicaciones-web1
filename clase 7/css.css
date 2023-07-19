@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(https://us.123rf.com/450wm/waichi2013th/waichi2013th2209/waichi2013th220900124/192740335-fondo-geom%C3%A9trico-colorido-dise%C3%B1o-de-fondo-de-color-ne%C3%B3n-composici%C3%B3n-de-formas-din%C3%A1micas-fondos.jpg?ver=6) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+#container {
+    border-color: green;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#content {
+    width: 50%;
+    border: 2px dotted;
+    border-color: green;
+    border-radius: 5px;
+    margin: 20px auto;
+    text-align: center;
+    background: #edbb99;
+    height: 650px;
+}
+
+fieldset {
+    width: 50%;
+    margin: 10px auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.boton_personalizado {
+    padding: 10px;
+    font-weight: 250;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #EC7063;
+    border-radius: 10px;
+    border: 2px solid #0016b0;
+    width: 100px;
+    height: 40px;
+}
+
+.boton_personalizado:hover {
+    color: #FDFEFE;
+    background-color: #9B59B6;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Similitud de coseno</title>
+</head>
+
+<body>
+    <h1>Similitud de coseno</h1>
+    <p id="respuesta"></p>
+    <script>
+        // Función para calcular la similitud de coseno entre dos vectores
+        function cosineSimilarity(vec1, vec2) {
+            // Calcula el producto punto de los vectores
+            let dotProduct = 0;
+            for (let i = 0; i < vec1.length; i++) {
+                dotProduct += vec1[i] * vec2[i];
+            }
+
+            // Calcula las magnitudes de los vectores
+            let magnitude1 = 0;
+            let magnitude2 = 0;
+            for (let i = 0; i < vec1.length; i++) {
+                magnitude1 += Math.pow(vec1[i], 2);
+                magnitude2 += Math.pow(vec2[i], 2);
+            }
+            magnitude1 = Math.sqrt(magnitude1);
+            magnitude2 = Math.sqrt(magnitude2);
+
+            // Calcula la similitud de coseno
+            const similarity = dotProduct / (magnitude1 * magnitude2);
+            return similarity;
+        }
+
+        // Conjunto de datos 1
+        const dataset1 = [1, 2, 3, 4, 5];
+
+        // Conjunto de datos 2
+        const dataset2 = [2, 4, 6, 8, 10];
+
+        // Calcula la similitud de coseno entre dataset1 y dataset2
+        const similarity = cosineSimilarity(dataset1, dataset2);
+        res = document.getElementById("respuesta").textContent = "la semilitud es: " + similarity;
+    </script>
+</body>
+
+</html>

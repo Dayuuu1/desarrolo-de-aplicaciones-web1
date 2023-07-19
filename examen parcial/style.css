@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    margin: 0;
+    display: flex;
+    margin-right: 600px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+body {
+    font-family: Arial, Sans-Serif;
+    font-size: 70%;
+    padding: 0;
+}
+
+.campo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: rgb(8, 24, 255);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0414e9;
+    background: #FEF7CD;
+}
+
+p {
+    margin: 0 0 5px 0;
+    padding: 0 0 0 2px;
+    color: #1042e6;
+}
+
+.picture {
+    margin-top: 20px;
+    height: 90px;
+}
+
+h3 {
+    font-size: 150%;
+    font-family: Sans-Serif, Arial;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 0;
+    color: #1480CD;
+}
+
+.read_more {
+    margin-top: 10px;
+    padding-top: 4px;
+    text-align: right;
+    padding-right: 9px;
+    font-size: 90%;
+}
+
+.read_more p {
+    color: #D85C1A;
+}
+
+#parte_izquierda {
+    float: left;
+    width: 150px;
+    margin: 0 0 0 0;
+    padding: 15px 0;
+    background: rgb(176, 189, 176);
+    padding: 10px;
+    margin: 5px;
+}
+
+.title a {
+    color: #1042e6;
+}
+
+#parte_izquierda p {
+    color: black;
+    padding-right: 10px;
+    margin: 0 0 15px 0;
+}
+
+#parte_izquierda a,
+#parte_izquierda a:visited {
+    font-family: Tahoma, Sans-Serif;
+    font-size: 90%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #009300;
+    padding-right: 10px;
+    display: block;
+    height: 17px;
+}
+
+#parte_izquierda a:hover {
+    color: #FFF;
+    background: url(link.gif) no-repeat center right;
+}
+
+#title p {
+    padding: 0 10px 3px 0;
+    margin: 0;
+    text-align: right;
+    font-size: 150%;
+    font-family: Sans-Serif;
+    letter-spacing: -1px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+#sadrzaj {
+    width: 945px;
+    color: #333;
+    line-height: 130%;
+    padding: 0;
+}
+
+#sadrzaj h3 {
+    margin: 10px 0 5px 0;
+}
+
+#parte_derecha {
+    float: right;
+    margin: 3px 0 0 0px;
+    width: 180px;
+    padding: 0 8px 8px 12px;
+    height: auto;
+}
+
+#parte_derecha h3 {
+    margin: 2px 0 5px 0;
+}
+
+#parte_derecha p {
+    color: black;
+}
+
+.desni_gaaaa {
+    padding: 10px;
+    height: auto;
+}
+
+#abajo {
+    float: left;
+    width: 130px;
+    top: 100px;
+}
+
+.informacije {
+    padding: 5px 10px 5px 10px;
+    margin: 5px 0 0 0;
+    background: #fff url(fade.gif) repeat-x bottom left;
+    height: auto;
+}
+
+.gaaaa img {
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+}
+
+#parte_media {
+    width: 592px;
+    margin-left: 145px;
+    padding: 0;
+    padding-top: 1px;
+    text-align: justify;
+}
+
+.srednji_gaaaa {
+    margin: 3px 0 0 3px;
+    padding: 0px 10px 10px 12px;
+    background: url(gaaaa.gif) no-repeat;
+}
+
+.gaaaa {
+    padding: 1px 12px 10px 10px;
+    background: #FFF url(fade.gif) repeat-x bottom left;
+    height: auto;
+}

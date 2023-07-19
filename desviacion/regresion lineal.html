@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regresión Lineal</title>
+
+</head>
+
+<body>
+
+    <button onclick="calcularYMostrarRegresionLineal()">Calcular Regresión Lineal</button>
+    <p id="coeficiente-a"></p>
+    <p id="coeficiente-b"></p>
+    <script>
+        function regressionLineal(x, y) {
+            var n = x.length;
+
+            let sumX = 0;
+            let sumY = 0;
+            let sumXSquared = 0;
+            let sumXY = 0;
+
+            for (let i = 0; i < n; i++) {
+                sumX += x[i];
+                sumY += y[i];
+                sumXSquared += x[i] * x[i];
+                sumXY += x[i] * y[i];
+            }
+
+            var a = (n * sumXY - sumX * sumY) / (n * sumXSquared - sumX * sumX);
+            var b = (sumY - a * sumX) / n;
+
+            return {
+                a,
+                b
+            };
+        }
+
+        function calcularYMostrarRegresionLineal() {
+            var x = [30, 20, 40, 30, 50, 70, 60, 80, 70, 80];
+            var y = [300, 250, 400, 290, 550, 750, 630, 930, 700, 840];
+
+            var resultado = regressionLineal(x, y);
+            document.getElementById("coeficiente-a").textContent = "a: " + resultado.a;
+            document.getElementById("coeficiente-b").textContent = "b: " + resultado.b;
+        }
+    </script>
+</body>
+
+</html>

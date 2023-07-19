@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Varianza</title>
+
+</head>
+
+<body>
+
+    <button onclick="calcularYMostrarVarianza()">Calcular Varianza y Desviacion Estandar</button>
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <script>
+        function calcularVarianza(numeros) {
+            var n = numeros.length;
+            let S = 0;
+
+            let SD = 0;
+            for (let i = 0; i < n; i++) {
+                SD += numeros[i];
+            }
+
+
+            var promedio = SD / n;
+
+            for (let i = 0; i < n; i++) {
+                S += Math.pow(numeros[i] - promedio, 2);
+            }
+
+            var varianza = S / n;
+
+            return varianza;
+        }
+
+        function calcularDesviacionEstandar(arr) {
+
+            let suma = 0;
+            for (let i = 0; i < arr.length; i++) {
+                suma += arr[i];
+            }
+            var media = suma / arr.length;
+
+            let SDC = 0;
+            for (let i = 0; i < arr.length; i++) {
+                var diferencia = arr[i] - media;
+                SDC += diferencia * diferencia;
+            }
+
+            var desviacionEstandar = Math.sqrt(SDC / arr.length);
+
+            return desviacionEstandar;
+        }
+
+        function calcularYMostrarVarianza() {
+            var numeros = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            var resultado = calcularVarianza(numeros);
+            document.getElementById("resultado").textContent = "La varianza es: " + resultado;
+
+            var desviacion = calcularDesviacionEstandar(numeros);
+            document.getElementById("resultado2").textContent = "La desviación estándar es: " + desviacion;
+        }
+    </script>
+</body>
+
+</html>

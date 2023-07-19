@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body onload="imprimir();">
+    <div id="container">
+        <div id="content">
+            <h3>mostrar pagos</h3>
+            <fieldset>
+                <legend>salida de datos</legend>
+                <table id="tbl_pagos" border="1">
+                    <tr>
+                        <td>Nombres</td>
+                        <td>Apellidos</td>
+                        <td>Basico</td>
+                        <td>Descuento</td>
+                        <td>Bono</td>
+                    </tr>
+                </table>
+
+            </fieldset>
+            <input type="submit" id="enviar" value="mostrar" class="boton_personalizado" onclick="print_empleados('tbl_pagos')"><br><br>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
