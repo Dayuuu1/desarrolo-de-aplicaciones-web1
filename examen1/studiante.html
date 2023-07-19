@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ADMISION</title>
+    <meta charset="windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background: #66e6d7;
+            color: rgb(250, 250, 250);
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #231818;
+            text-align: center;
+        }
+        
+        #content {
+            width: 80%;
+            border: dotted 2px #5DADE2;
+            margin: 10px auto;
+            border-radius: 5px;
+            background: #AEB6BF;
+            font-family: helvetica;
+        }
+        
+        fieldset {
+            color: #0E6655;
+            width: 65%;
+            margin: 10px auto;
+        }
+        
+        label {
+            display: inline-block;
+            width: 90px;
+        }
+        
+        select {
+            width: 150px;
+        }
+        
+        form input[type="text"],
+        form select,
+        textarea {
+            width: 180px;
+            padding: 3px 10px;
+            border: 1px solid #f6f6f6;
+            border-radius: 3px;
+            background-color: #f6f6f6;
+            margin: 8px 0;
+            display: inline-block;
+        }
+        
+        .btn {
+            background: #273746;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border: solid 2px rgb(254, 255, 253);
+            border-radius: 5px;
+            transition: transform .1s;
+            /* Animation */
+            margin: 1px 20px;
+        }
+        
+        #pie {
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #212F3C;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border: solid 3px white;
+            border-radius: 5px;
+            transform: scale(1.2);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <H2>MODULO DEL VIAJERO</H2>
+    </center>
+    <fieldset>
+        <legend>Registro de Estudiantes</legend>
+        <div class="tab tab-2">
+            Codigo <input type="number" class="input_text" name="cod" id="cod"><br><br> Nombres <input type="text" class="input_text" name="fname" id="fname"><br><br> Apellidos <input type="text" class="input_text" name="lname" id="lname"><br><br> Edad
+            <input type="text" class="input_text" name="age" id="age"><br><br> Genero
+            <input type="radio" id="gen" name="gen" value="Masculino"> M
+            <input type="radio" id="gen" name="gen" value="Femenino"> F<br><br> Puntaje
+            <input type="number" class="input_text" name="sit" id="sit"><br><br>
+
+            <button class="btn" onclick="agregar();">Enviar </button>
+            <button class="btn" onclick="Listar();">Listar</button>
+            <button class="btn" onclick="editar();">Editar</button>
+            <button class="btn" onclick="eliminar();">Eliminar</button>
+            <input class="input_text" type="text" id="inputBusqueda" placeholder="Buscar">
+        </div>
+    </fieldset>
+    <center>
+        <H2>LISTA DE POSTULANTES</H2>
+    </center>
+    <fieldset>
+        <legend>Ranking Postulantes</legend>
+        <div class="container">
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>cod</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>edad</th>
+                        <th>Genero</th>
+                        <th>punt</th>
+                        <th>sit</th>
+                    </tr>
+                </table>
+            </div>
+    </fieldset>
+
+
+    <script>
+        var rIndex,
+            table = document.getElementById("table");
+
+        function checkEmptyInput() {
+            var isEmpty = false,
+                fname = document.getElementById("fname").value,
+                lname = document.getElementById("lname").value,
+                age = document.getElementById("age").value;
+
+            if (fname === "") {
+                alert("Porfavor Introduzca el Nombre");
+                isEmpty = true;
+            } else if (lname === "") {
+                alert("Porfavor Introduzca el Apellido");
+                isEmpty = true;
+            } else if (age === "") {
+                alert("Porfavor Introduzca la Edad");
+                isEmpty = true;
+            }
+            return isEmpty;
+        }
+        // add Row
+        function Listar() {
+
+            let cod = ['150']
+            let fname = ['Juan']
+            let lname = ['Velasquez']
+            let age = [21]
+            let gen = ['Masculino']
+            let punt = [700]
+            let sit = ['Ingreso']
+            let mitabla = document.getElementById("table");
+
+            for (let i = 0; i < fname.length; i++) {
+                let newRow = mitabla.insertRow(-1);
+                let cell1 = newRow.insertCell(0);
+                let cell2 = newRow.insertCell(1);
+                let cell3 = newRow.insertCell(2);
+                let cell4 = newRow.insertCell(3);
+                let cell5 = newRow.insertCell(4);
+                let cell6 = newRow.insertCell(5);
+                let cell7 = newRow.insertCell(6);
+
+                cell1.innerHTML = cod[i];
+                cell2.innerHTML = fname[i];
+                cell3.innerHTML = lname[i];
+                cell4.innerHTML = age[i];
+                cell5.innerHTML = gen[i];
+                cell6.innerHTML = punt[i];
+                cell7.innerHTML = sit[i];
+            }
+        }
+
+
+        function agregar() {
+            if (!checkEmptyInput()) {
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                    cell6 = newRow.insertCell(5),
+                    cell7 = newRow.insertCell(6),
+                    cod = document.getElementById("cod").value,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("age").value;
+                gen = document.querySelector('input[name="gen"]:checked').value;
+                sit = document.getElementById("sit").value,
+
+                    cell1.innerHTML = cod;
+                cell2.innerHTML = fname;
+                cell3.innerHTML = lname;
+                cell4.innerHTML = age;
+                cell5.innerHTML = gen;
+                cell6.innerHTML = sit;
+
+                if (sit >= 700) {
+                    cell7.innerHTML = "INGRESO";
+                } else {
+                    cell7.innerHTML = "NO INGRESO";
+                }
+
+
+
+
+                document.getElementById("cod").value = " ";
+                document.getElementById("fname").value = " ";
+                document.getElementById("lname").value = " ";
+                document.getElementById("age").value = " ";
+                document.getElementById("sit").value = " ";
+
+                // call the function to set the event to the new row
+                seleccionar();
+            }
+        }
+
+        function seleccionar() {
+
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function() {
+                    // get the seected row index
+                    rIndex = this.rowIndex;
+                    document.getElementById("cod").value = this.cells[0].innerHTML;
+                    document.getElementById("fname").value = this.cells[1].innerHTML;
+                    document.getElementById("lname").value = this.cells[2].innerHTML;
+                    document.getElementById("age").value = this.cells[3].innerHTML;
+                    document.getElementById("gen").value = this.cells[4].innerHTML;
+                    document.getElementById("sit").value = this.cells[5].innerHTML;
+                };
+            }
+        }
+        seleccionar();
+
+
+        function editar() {
+            var cod = document.getElementById("cod").value,
+                fname = document.getElementById("fname").value,
+                lname = document.getElementById("lname").value,
+                age = document.getElementById("age").value;
+            gen = document.getElementById("gen").value;
+            punt = document.getElementById("punt").value;
+            if (!checkEmptyInput()) {
+                table.rows[rIndex].cells[0].innerHTML = cod;
+                table.rows[rIndex].cells[1].innerHTML = fname;
+                table.rows[rIndex].cells[2].innerHTML = lname;
+                table.rows[rIndex].cells[3].innerHTML = age;
+                table.rows[rIndex].cells[4].innerHTML = gen;
+                table.rows[rIndex].cells[5].innerHTML = punt;
+            }
+        }
+
+        function eliminar() {
+            table.deleteRow(rIndex);
+            // clear input text
+            document.getElementById("cod").value = "";
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("gen").value = "";
+            document.getElementById("punt").value = "";
+            document.getElementById("sit").value = "";
+        }
+
+        document.getElementById('inputBusqueda').addEventListener('input', function() {
+            const inputBusqueda = this.value.toLowerCase();
+            buscarDato(inputBusqueda);
+        });
+
+        function buscarDato(nombre) {
+            const tabla = document.getElementById('table');
+            const filas = tabla.getElementsByTagName('tr');
+
+            for (let i = 0; i < filas.length; i++) {
+                const celdas = filas[i].getElementsByTagName('td');
+
+                for (let j = 0; j < celdas.length; j++) {
+                    const contenidoCelda = celdas[j].innerText || celdas[j].textContent;
+                    const contenidoCeldaFormateado = contenidoCelda.toLowerCase(); // Convertir el contenido de la celda a minusculas
+                    if (contenidoCeldaFormateado.includes(nombre)) {
+                        filas[i].style.display = ''; // Muestra la fila si encuentra una coincidencia
+                        break;
+                    } else {
+                        filas[i].style.display = 'none'; // Oculta la fila si no hay coincidencias
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

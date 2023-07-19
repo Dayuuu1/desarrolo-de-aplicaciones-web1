@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examamen </title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <DIV class="F">
+        <div class="tab tab-2">
+            Codigo :<input type="number" name="cod" id="cod"> Nombre :<input type="text" name="nombre" id="nombre"> Apellido :<input type="text" name="Apellido" id="Apellido"> edad :<input type="number" name="Edad" id="Edad">
+
+            <select name="tipo" id="tipo">
+                <option value="0" disabled selected>seleccione su genero</option>
+                <option  value="activo">activo</option>
+                <option value="pasivo">pasivo</option>
+                <option value="patrimonio">patrimonio</option>
+                
+           
+            
+            </select> Puntaje :<input type="number" name="puntaje" id="puntaje">
+
+            <button onclick="addHtmlTableRow();">Add</button>
+            <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+            <button onclick="removeSelectedRow();">Remove</button>
+        </div>
+    </DIV>
+    <div class="recto">
+        <div class="container">
+
+            <table id="example">
+                <thead>
+                    <tr>
+
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>edad</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>dato</td>
+                        <td>dato</td>
+                        <td>0</td>
+                        <td>tipo</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>

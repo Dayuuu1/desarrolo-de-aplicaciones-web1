@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        /* Estilo para los botones y campos de entrada */
+        
+        input[type="text"],
+        input[type="email"],
+        button {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .editar {
+            width: 20%;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .datos {
+            position: relative;
+            content: '';
+            background-color: #0c1022;
+            border-radius: 50px 5px;
+            inset: 5px;
+            padding: 20px 30px;
+            z-index: 10;
+            width: 30%;
+            height: 30%;
+            color: #00ccff;
+            margin-bottom: 50px;
+            display: grid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="datos">
+        <input type="text" id="inputNombre" placeholder="Nombre">
+        <input type="text" id="inputApellido" placeholder="Apellido">
+        <input type="email" id="inputEmail" placeholder="Correo electrónico">
+        <button onclick="agregarFila()">Agregar</button>
+        <button onclick="mostrarDatos()">Mostrar datos</button>
+        <input type="text" id="inputEliminar" placeholder="Ingrese el código">
+        <button onclick="eliminarFila()">Eliminar</button>
+        <input type="text" id="inputBuscar" placeholder="Buscar por nombre">
+        <button onclick="buscarPorNombre()">Buscar</button>
+    </div>
+
+    <div class="editar">
+        <input type="text" id="inputNombreBuscar" placeholder="Ingrese el nombre">
+        <button onclick="buscarPorNombre()">Buscar por nombre</button>
+
+        <input type="text" id="inputEditarCodigo" placeholder="Ingrese el código">
+        <input type="text" id="inputEditarNombre" placeholder="Nuevo nombre">
+        <input type="text" id="inputEditarApellido" placeholder="Nuevo apellido">
+        <input type="email" id="inputEditarEmail" placeholder="Nuevo correo electrónico">
+        <button onclick="editarFila()">Editar</button>
+
+    </div>
+
+    <table id="miTabla">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>nota</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyDatos">
+        </tbody>
+    </table>
+
+    <script>
+        // Variable para almacenar el código único
+        var codigo = 1;
+
+        // Array para almacenar los datos
+        var datos = [];
+
+        function agregarFila() {
+            // Obtén los valores de los inputs
+            var nombre = document.getElementById("inputNombre").value;
+            var apellido = document.getElementById("inputApellido").value;
+            var email = document.getElementById("inputEmail").value;
+
+            // Limpia los valores de los inputs
+            document.getElementById("inputNombre").value = "";
+            document.getElementById("inputApellido").value = "";
+            document.getElementById("inputEmail").value = "";
+
+            // Agrega los datos a los arrays
+            var filaDatos = [codigo, nombre, apellido, email];
+            datos.push(filaDatos);
+
+            // Incrementa el código único para la próxima fila
+            codigo++;
+        }
+
+        function mostrarDatos() {
+            // Obtén una referencia al cuerpo de la tabla (tbody)
+            var tbody = document.getElementById("tbodyDatos");
+
+            // Limpia el cuerpo de la tabla
+            tbody.innerHTML = "";
+
+            // Recorre el array de datos y muestra los datos en la tabla
+            for (var i = 0; i < datos.length; i++) {
+                var fila = document.createElement("tr");
+                var celdaCodigo = document.createElement("td");
+                var celdaNombre = document.createElement("td");
+                var celdaApellido = document.createElement("td");
+                var celdaEmail = document.createElement("td");
+
+                celdaCodigo.textContent = datos[i][0];
+                celdaNombre.textContent = datos[i][1];
+                celdaApellido.textContent = datos[i][2];
+                celdaEmail.textContent = datos[i][3];
+
+                fila.appendChild(celdaCodigo);
+                fila.appendChild(celdaNombre);
+                fila.appendChild(celdaApellido);
+                fila.appendChild(celdaEmail);
+
+                tbody.appendChild(fila);
+            }
+        }
+
+        function eliminarFila() {
+            var codigoEliminar = document.getElementById("inputEliminar").value;
+
+            // Busca el índice de la fila a eliminar según el código ingresado
+            var indice = -1;
+            for (var i = 0; i < datos.length; i++) {
+                if (datos[i][0] == codigoEliminar) {
+                    indice = i;
+                    break;
+                }
+            }
+
+            if (indice !== -1) {
+                // Elimina la fila del array de datos
+                datos.splice(indice, 1);
+
+                // Vuelve a mostrar los datos actualizados
+                mostrarDatos();
+            }
+
+            // Limpia el valor del input de eliminación
+            document.getElementById("inputEliminar").value = "";
+        }
+        document.getElementById('inputBuscar').addEventListener('input', function() {
+            const inputBusqueda = this.value.toLowerCase();
+            buscarDato(inputBusqueda);
+        });
+
+        function buscarPorNombre() {
+            // Obtener el valor del campo de entrada
+            var nombreABuscar = document.getElementById("inputBuscar").value.toLowerCase();
+
+            // Filtrar los datos para encontrar las filas que coincidan con el nombre buscado
+            var datosFiltrados = datos.filter(function(fila) {
+                return fila[1].toLowerCase().includes(nombreABuscar);
+            });
+
+            // Mostrar solo las filas que coincidan con la búsqueda
+            var tbody = document.getElementById("tbodyDatos");
+            tbody.innerHTML = "";
+
+            for (var i = 0; i < datosFiltrados.length; i++) {
+                var fila = document.createElement("tr");
+                var celdaCodigo = document.createElement("td");
+                var celdaNombre = document.createElement("td");
+                var celdaApellido = document.createElement("td");
+                var celdaEmail = document.createElement("td");
+
+                celdaCodigo.textContent = datosFiltrados[i][0];
+                celdaNombre.textContent = datosFiltrados[i][1];
+                celdaApellido.textContent = datosFiltrados[i][2];
+                celdaEmail.textContent = datosFiltrados[i][3];
+
+                fila.appendChild(celdaCodigo);
+                fila.appendChild(celdaNombre);
+                fila.appendChild(celdaApellido);
+                fila.appendChild(celdaEmail);
+
+                tbody.appendChild(fila);
+            }
+        }
+        /*function buscarPorNombre() {
+            // Obtén el valor del nombre a buscar
+            var nombreBuscar = document.getElementById("inputNombreBuscar").value;
+
+            // Filtra los datos por el nombre
+            var resultados = datos.filter(function(fila) {
+                return fila[1].toLowerCase().includes(nombreBuscar.toLowerCase());
+            });
+
+            // Muestra los resultados en la tabla
+            mostrarResultados(resultados);
+        }*/
+
+        function editarFila() {
+            // Obtén los valores de los inputs de edición
+            var codigoEditar = document.getElementById("inputEditarCodigo").value;
+            var nuevoNombre = document.getElementById("inputEditarNombre").value;
+            var nuevoApellido = document.getElementById("inputEditarApellido").value;
+            var nuevoEmail = document.getElementById("inputEditarEmail").value;
+
+            // Busca el índice de la fila a editar según el código ingresado
+            var indice = -1;
+            for (var i = 0; i < datos.length; i++) {
+                if (datos[i][0] == codigoEditar) {
+                    indice = i;
+                    break;
+                }
+            }
+
+            if (indice !== -1) {
+                // Actualiza los datos de la fila
+                datos[indice][1] = nuevoNombre;
+                datos[indice][2] = nuevoApellido;
+                datos[indice][3] = nuevoEmail;
+
+                // Vuelve a mostrar los datos actualizados
+                mostrarDatos();
+            }
+
+            // Limpia los valores de los inputs de edición
+            document.getElementById("inputEditarCodigo").value = "";
+            document.getElementById("inputEditarNombre").value = "";
+            document.getElementById("inputEditarApellido").value = "";
+            document.getElementById("inputEditarEmail").value = "";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
