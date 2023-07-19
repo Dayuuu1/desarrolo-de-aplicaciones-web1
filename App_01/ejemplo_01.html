@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link href="hovertreewelcome.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+    <div class="container ">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6 offset-3">
+                    <div class="card">
+
+                        <div class="card card-header bg-info text-white text-center ">
+                            <h3>promedio final</h3>
+                        </div>
+                        <div class="card card-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="nombre">nombres</label>
+                                        <input type="text" id="nombre" name="nombres" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="apellidos">apellidos</label>
+                                        <input type="text" id="apellidos" name="apellidos" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="curso">curso</label>
+                                        <select name="curso" id="curso" class="form-control">
+                                                <option value="0" disabled>seleccione un curso</option>
+                                                
+                                            </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="unidad">Unidad</label>
+                                        <select name="Unidad" id="Unidad" class="form-control">
+                                                <option value="0" disabled>seleccione una unidad</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="conceptual">conceptual</label>
+                                        <input type="text" id="conceptual" name="conceptual" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="procedimental">procedimental</label>
+                                        <input type="text" id="procedimental" name="procedimental" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="actitudinal">actitudinal</label>
+                                        <input type="text" id="actitudinal" name="actitudinal" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button id="procesar" name="procesar" class="btn-info btn">procesar</button>
+                                <button id="procesar" name="procesar" class="btn-warning btn">editar</button>
+                                <button id="borrar" name="borrar" class="btn-danger btn">borrar</button>
+                            </div>
+
+                        </div>
+                        <div class="card card-footer">
+                            <table id="respuesta" class="tabl table-bordered">
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="bootstrap/js/mis_funciones.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+</body>
+
+</html>
