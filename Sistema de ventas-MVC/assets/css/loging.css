@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url(../img/fondo_login.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.square
+{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.square i
+{
+	width: 500px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.699);
+  transform: rotate(45deg);
+  animation: animate 6s linear infinite;
+}
+.square i:nth-child(1)
+{
+	border-radius: 100% 0% 100% 0% / 0% 100% 0% 100% ;
+	animation: animate 6s linear infinite;
+}
+
+.square:hover i
+{
+	border: 6px solid var(--clr);
+	
+}
+
+.login 
+{
+	position: absolute;
+	width: 300px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.login h2 
+{
+	font-size: 2em;
+	color: #fff;
+}
+.login .inputBx 
+{
+	position: relative;
+	width: 100%;
+}
+.login .inputBx input 
+{
+	position: relative;
+	width: 100%;
+	padding: 12px 20px;
+	background: transparent;
+	border: 2px solid #fff;
+	border-radius: 40px;
+	font-size: 1.2em;
+	color: #fff;
+	box-shadow: none;
+	outline: none;
+}
+.login .inputBx input[type="submit"]
+{
+	color: rgb(255, 255, 255);
+	 text-shadow: 2px 2px 5px #000000;
+	width: 100%;
+	background: #0078ff;
+	background: linear-gradient(45deg,#ff357a,#fff172, #0abe22);
+	border: none;
+	cursor: pointer;
+}
+.login .inputBx input::placeholder 
+{
+	color: rgba(255,255,255,0.75);
+}
+.login .links
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+.login .links a 
+{
+	color: #fff;
+	text-decoration: none;
+}
